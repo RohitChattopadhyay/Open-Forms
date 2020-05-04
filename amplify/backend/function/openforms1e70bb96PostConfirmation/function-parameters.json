@@ -1,0 +1,16 @@
+{
+    "trigger": true,
+    "modules": [
+        "add-to-group"
+    ],
+    "parentResource": "openforms1e70bb96",
+    "functionName": "openforms1e70bb96PostConfirmation",
+    "resourceName": "openforms1e70bb96PostConfirmation",
+    "parentStack": "auth",
+    "triggerEnvs": [],
+    "triggerDir": "C:\\Users\\user1\\AppData\\Roaming\\npm\\node_modules\\@aws-amplify\\cli\\node_modules\\amplify-category-auth\\provider-utils\\awscloudformation\\utils/../triggers/PostConfirmation",
+    "triggerTemplate": "PostConfirmation.json.ejs",
+    "roleName": "openforms1e70bb96PostConfirmation",
+    "skipEdit": true,
+    "GROUP": "everyone"
+}

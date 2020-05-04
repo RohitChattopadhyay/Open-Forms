@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+$body-bg: #282c34;
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

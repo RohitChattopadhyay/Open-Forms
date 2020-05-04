@@ -1,0 +1,25 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-openforms-dev-122123-authRole",
+            "UnauthRoleArn": "arn:aws:iam::501090252695:role/amplify-openforms-dev-122123-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::501090252695:role/amplify-openforms-dev-122123-authRole",
+            "Region": "us-west-2",
+            "DeploymentBucketName": "amplify-openforms-dev-122123-deployment",
+            "UnauthRoleName": "amplify-openforms-dev-122123-unauthRole",
+            "StackName": "amplify-openforms-dev-122123",
+            "StackId": "arn:aws:cloudformation:us-west-2:501090252695:stack/amplify-openforms-dev-122123/8fda76f0-8d0a-11ea-b6eb-0aa1ce010932",
+            "AmplifyAppId": "d3s55oiess58p5"
+        },
+        "categories": {
+            "auth": {
+                "openforms1e70bb96": {}
+            },
+            "function": {
+                "openforms1e70bb96PostConfirmation": {
+                    "GROUP": "everyone"
+                }
+            }
+        }
+    }
+}

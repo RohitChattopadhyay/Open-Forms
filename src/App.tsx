@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-function App() {
+import "./App.scss";
+
+import AdminComponent from "./components/Admin";
+import FormComponent from "./components/Form";
+
+export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="my-auto">
+                <h1 className="logoFont">Open Forms</h1>
+                <Link
+                  className="mt-5 btn btn-outline-warning btn-lg"
+                  to="/admin"
+                >
+                  Create Form Now
+                </Link>
+              </div>
+            </Route>
+            <Route path="/form/:formID">
+              <FormComponent/>
+            </Route>
+            <Route path="/admin">
+              <AdminComponent />
+            </Route>
+          </Switch>
+        </Router>
       </header>
     </div>
   );
 }
-
-export default App;

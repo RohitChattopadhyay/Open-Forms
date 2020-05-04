@@ -1,0 +1,66 @@
+"""
+A Form entity containsts all the information related to the form
+"""
+type Form @model 
+  @auth(rules : [
+    { allow: owner, operations: [read,create, update, delete] },
+    { allow: public, provider: iam, operations: [read] },
+  ])
+{
+  id: ID!
+  """
+  Contains the author,description,title of the form
+  """
+  meta: FormMetadata
+  isActive: Boolean
+  questions: [Question!]
+  responses: [Response] @connection(keyName: "FormResponses", fields: ["id"], sortField: "createdAt")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+type FormMetadata {
+  description: String
+  title: String
+}
+type Question{
+  type: QuestionType!
+  title: String!
+  description: String
+  isRequired : Boolean
+  """
+  Applicable for SingleChoice and MultipleChoice questions
+  """
+  options : [String]
+}
+"""
+Supported types of questions
+"""
+enum QuestionType {
+  ShortAns
+  LongAns
+  SingleChoice
+  MultipleChoice
+}
+"""
+Responses associated with the form
+"""
+type Response @model
+  @key(name: "FormResponses", fields: ["formID"])
+  @auth(rules : [
+    { allow: public, provider: iam, operations: [create] },
+    { allow: private, operations: [read,create] }
+  ])
+  {
+  formCreator: String
+  id: ID!
+  formID: ID! 
+  answers: [Answers!]
+  createdAt: AWSDateTime
+}
+"""
+Answers associated with the form response
+"""
+type Answers {
+  question: String!
+  answer: String
+}
