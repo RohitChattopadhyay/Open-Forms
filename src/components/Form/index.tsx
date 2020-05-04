@@ -4,8 +4,7 @@ import {
   useParams,
 } from "react-router-dom";
 import AnswerBlock from "./answerBlock";
-import { API, graphqlOperation } from "aws-amplify";
-import { createResponse as CreateResponseAPI } from "../../graphql/mutations"
+import { API } from "aws-amplify";
 
 function FormComponent() {
   type initialAnsState = {
@@ -73,7 +72,13 @@ function FormComponent() {
       answers: stateArr,
     };
     try {
-      await API.graphql(graphqlOperation(CreateResponseAPI, { input: response }));
+      await API.graphql({
+        query:
+          "mutation CreateResponse(    $input: CreateResponseInput!    $condition: ModelResponseConditionInput  ) {    createResponse(input: $input, condition: $condition) {      formCreator      id      formID      answers {        question        answer      }      createdAt    }  }",
+        variables: { input: response },
+        //@ts-ignore
+        authMode: "AWS_IAM",
+      });
       setLoading(true)
       setLoaderMsg("Thank you for filling the form")
     } catch (err) {

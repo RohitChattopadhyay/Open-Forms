@@ -43,5 +43,11 @@
             "providerPlugin": "awscloudformation",
             "service": "Lambda"
         }
+    },
+    "hosting": {
+        "amplifyhosting": {
+            "service": "amplifyhosting",
+            "type": "cicd"
+        }
     }
 }

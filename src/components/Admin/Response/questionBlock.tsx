@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 export default function QuestionBlock(props:any) {
-  console.log(props.stateArr)
   const [qTitle, setQTitle] = useState(props.stateArr.title);
   const [qDesc, setQDesc] = useState(props.stateArr.description);
   const [qRequired, setQRequired] = useState(props.stateArr.isRequired);
