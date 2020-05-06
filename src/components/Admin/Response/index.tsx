@@ -20,7 +20,7 @@ function AdminCreate() {
   const [formState, setFormState] = useState<any>();
   const [questionArr, setQuestionArr] = useState<any[]>([]);
   const [responseArr, setResponseArr] = useState<any[]>([]);
-  const [viewTab, setViewTab] = useState("resp");
+  const [viewTab, setViewTab] = useState("details");
   let { formID } = useParams();
   formID = atob(decodeURIComponent(formID));
 
@@ -110,10 +110,10 @@ function AdminCreate() {
       <h1 className="mt-5">Form Details</h1>
       <div className="container my-5 col-sm-12">
         <div className="row mb-5">
-          <div className="col-sm-6 offset-sm-3">
+          <div className="col-sm-6 offset-sm-3 row">
             <div
               className={
-                "col-12 border-warning py-1" +
+                "col-6 border-warning py-1" +
                 (viewTab == "resp" ? " border-bottom" : " pointer")
               }
               onClick={(e) => setViewTab("resp")}
@@ -122,7 +122,7 @@ function AdminCreate() {
             </div>
             <div
               className={
-                "col-6 border-warning py-1 d-none" +
+                "col-6 border-warning py-1" +
                 (viewTab == "details" ? " border-bottom" : " pointer")
               }
               onClick={(e) => setViewTab("details")}
@@ -168,7 +168,7 @@ function AdminCreate() {
             </small>
           </div>
           <div
-            className={"col-sm-12" + (viewTab == "details" ? "" : " d-none")}
+            className={"col-sm-6 offset-sm-3" + (viewTab == "details" ? "" : " d-none")}
           >
             <form>
               <div className="form-row">

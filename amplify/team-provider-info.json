@@ -15,11 +15,6 @@
             "auth": {
                 "openforms1e70bb96": {}
             },
-            "function": {
-                "openforms1e70bb96PostConfirmation": {
-                    "GROUP": "everyone"
-                }
-            },
             "hosting": {
                 "amplifyhosting": {
                     "appId": "d3s55oiess58p5",
