@@ -8,6 +8,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 import Amplify from "aws-amplify";
+import '@aws-amplify/ui/dist/style.css';
 import config from "../../aws-exports";
 import { withAuthenticator } from "aws-amplify-react";
 import Auth from '@aws-amplify/auth';
